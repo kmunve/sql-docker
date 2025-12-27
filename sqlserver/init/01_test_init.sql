@@ -1,0 +1,17 @@
+IF DB_ID('testdb') IS NULL
+BEGIN
+  CREATE DATABASE testdb;
+END
+GO
+
+USE testdb;
+GO
+
+IF OBJECT_ID('dbo.example') IS NULL
+BEGIN
+  CREATE TABLE dbo.example (
+    id INT IDENTITY PRIMARY KEY,
+    name NVARCHAR(100) NOT NULL
+  );
+END
+GO

@@ -21,6 +21,9 @@ RUN curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor
  && echo 'export PATH="$PATH:/opt/mssql-tools18/bin"' >> /etc/profile.d/mssql-tools.sh \
  && rm -rf /var/lib/apt/lists/*
 
+RUN pip install sqlit-tui
+
+
 # A tiny "wait for DB" script
 COPY wait_for_db.py /app/wait_for_db.py
 
